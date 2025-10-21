@@ -14,3 +14,69 @@ const handleSearch = () => {
         alert("검색어를 입력해주세요.");
     }
 };
+
+// 상품상세보기 이벤트 함수
+const viewItem = () => {
+    gtag("event", "view_item", {
+        category: "IT",
+        labels: "promotion_item",
+        currency: "KRW",
+        value: 129000,
+        items: [
+            {
+                item_id: "EP1001",
+                item_name: "무선 이어폰",
+                item_category: "accessary",
+                price: 129000,
+                quantity: 1
+            }
+        ]
+    });
+
+    alert("view_item 이벤트 발생!");
+}
+
+// 장바구니 담기 이벤트 함수
+const addToCart = () => {
+    gtag("event", "add_to_cart", {
+        category: "IT",
+        labels: "promotion_item",
+        currency: "KRW",
+        value: 129000,
+        items: [
+            {
+                item_id: "EP1001",
+                item_name: "무선 이어폰",
+                item_category: "accessary",
+                price: 129000,
+                quantity: 1
+            }
+        ]
+    });
+
+    alert("add_to_cart 이벤트 발생!");
+}
+
+// 구매하기 이벤트 함수
+const purchase = () => {
+    gtag("event", "purchase", {
+        transaction_id: "T12345",
+        affiliation: "온라인몰",
+        labels: "promotion_item",
+        tax: 12900,
+        shipping: 3000,
+        currency: "KRW",
+        value: 129000,
+        items: [
+            {
+                item_id: "EP1001",
+                item_name: "무선 이어폰",
+                item_category: "accessary",
+                price: 129000,
+                quantity: 1
+            }
+        ]
+    });
+
+    alert("purchase 이벤트 발생!");
+}
